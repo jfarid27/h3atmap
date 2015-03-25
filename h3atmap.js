@@ -56,12 +56,12 @@
 
             var exports = function(){
 
-                svg = selection.append('g').classed('heatmap', true)
+                svg = selection.append('g').classed('h3atmap', true)
 
-                axis.x.group = svg.append('g').classed('heatmap-x-axis', true)
-                axis.y.group = svg.append('g').classed('heatmap-y-axis', true)
-                cells.group = svg.append('g').classed('heatmap-cells', true)
-                brush.group = svg.append('g').classed('heatmap-brush', true)
+                axis.x.group = svg.append('g').classed('h3atmap-x-axis', true)
+                axis.y.group = svg.append('g').classed('h3atmap-y-axis', true)
+                cells.group = svg.append('g').classed('h3atmap-cells', true)
+                brush.group = svg.append('g').classed('h3atmap-brush', true)
 
                 brush.instance.on('brush', function(){
                     brush.group.selectAll("rect")
