@@ -1,0 +1,11 @@
+{
+  "name": "h3atmap",
+  "main": "h3atmap.js",
+  "version": "1.0.0",
+  "description": "A light d3 based heatmap drawing module for requireJS",
+  "homepage": "https://github.com/jfarid27/h3atmap",
+  "authors": [
+    "jfarid27 <jrab227@gmail.com>"
+  ],
+  "license": "MIT"
+}

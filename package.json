@@ -1,0 +1,37 @@
+{
+  "name": "h3atmap",
+  "version": "1.0.0",
+  "description": "A light d3 based heatmap drawing module for requireJS",
+  "main": "h3atmap.js",
+  "directories": {
+    "test": "tests"
+  },
+  "scripts": {
+    "test": "./node_modules/karma/bin/karma start"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/jfarid27/h3atmap.git"
+  },
+  "contributors": [
+    "jfarid27 <jrab227@gmail.com>"
+  ],
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/jfarid27/h3atmap/issues"
+  },
+  "homepage": "https://github.com/jfarid27/h3atmap",
+  "dependencies": {
+    "d3": "^3.5.5",
+    "require": "^2.4.17",
+    "requirejs": "^2.1.16"
+  },
+  "devDependencies": {
+    "jasmine": "^2.2.1",
+    "jasmine-core": "^2.2.0",
+    "karma": "^0.12.31",
+    "karma-firefox-launcher": "^0.1.4",
+    "karma-jasmine": "^0.3.5",
+    "karma-requirejs": "^0.2.2"
+  }
+}
