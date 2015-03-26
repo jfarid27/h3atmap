@@ -34,15 +34,45 @@ requirejs(['h3atmap', 'd3'], function(h3atmap, d3){
         return cells
     }).reduce(function(p,n){ return p.concat(n) })
 
+    var cellSettings = {
+        'width': 15,
+        'height': 15,
+        'padding-percentage': .10
+    }
+
+    var visSettingsX = {
+        'margin': 10,
+        'axis-width': columns.length * cellSettings.height,
+        'gutter-width': 90
+    }
+
+    var visSettingsY = {
+        'margin': 10,
+        'axis-width': rows.length * cellSettings.width,
+        'gutter-width': 90
+    }
+
     //Make a selection to feed into the heatmap
     var elem = d3.select('div#heatmap')
         .append('svg').classed('heatmap', true)
+        .attr('width', 2 * visSettingsX.margin + 
+            2 * visSettingsX['gutter-width'] + 
+            visSettingsX['axis-width'] 
+        )
+        .attr('height', 2 * visSettingsY.margin + 
+            2 * visSettingsY['gutter-width'] + 
+            visSettingsY['axis-width'] 
+        )
     
+
     //Set up the heatmap
     var heatmap = h3atmap()
         .selection(elem)
+        .settings.x(visSettingsX)
+        .settings.y(visSettingsY)
         .settings.labels(true)
         .settings.expand(true)
+        .settings.cell(cellSettings)
     
     //Initialize the heatmap
     heatmap()

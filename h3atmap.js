@@ -106,25 +106,11 @@
                     updateScales(data)
                     updateBrush()
 
-                    if (settings.expand){
-                        selection
-                        .attr('width', 2 * settings.x['margin'] + 
-                            2 * settings.x['gutter-width'] + 
-                            (data.columns.length * 
-                                (settings.cell['width']) )
-                        )
-                        .attr('height', 2 * settings.y['margin'] + 
-                            2 * settings.y['gutter-width'] + 
-                            (data.rows.length * 
-                                ( settings.cell['height'] ) ) ) 
-                    } else {
-                        selection
-                        .attr('width', 2 * settings.x['margin'] + 
-                            settings.x['axis-width'] + 
-                            2 * settings.x['gutter-width'])
-                        .attr('height', settings.y['margin'] + 
-                            settings.y['axis-width'] + 
-                            settings.y['gutter-width'])
+                    if (!settings.expand){
+                        settings.cell.width = (settings
+                            .x['axis-width'] / data.columns.length)
+                        settings.cell.width = (settings
+                            .y['axis-width'] / data.rows.length)
                     }
 
                     var elements = cells.group.selectAll('rect')
@@ -144,6 +130,7 @@
                         .attr('fill', function(cell){
                             return settings.colors(cell.value)
                         })
+
                     if (settings.labels){ 
                         updateAxisLabels(data)
                     }
@@ -344,7 +331,7 @@
                         offset = (settings.x['margin'] + settings.x['gutter-width'] + 
                             (data.columns.length * settings.cell['height'])  ) 
                     } else {
-                        offset = (settings.x['margin'] + 40 + settings.x['gutter-width'] + settings.x['axis-width'] ) 
+                        offset = (settings.x['margin'] + settings.x['gutter-width'] + settings.x['axis-width'] ) 
                     }
 
                     return "translate(" + (offset) + ",0)"
